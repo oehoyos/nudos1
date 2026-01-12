@@ -1,9 +1,78 @@
-<html>
-<h1> learning to roll the dice </h1>
-from random import randint
-repeat = True
-while repeat:
-    print("You rolled",randint(1,6))
-    print("Do you want to roll again?")
-    repeat = ("y" or "yes") in input().lower()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VSM Buyer Process Map</title>
+<style>
+  body { margin: 0; padding: 0; background-color: #f5f5f5; font-family: sans-serif; }
+
+  /* Container to handle horizontal scrolling */
+  .map-scroll-container {
+    width: 100%;
+    height: 100vh; /* Uses full screen height */
+    overflow-x: auto; /* Scroll horizontally */
+    overflow-y: hidden;
+    position: relative;
+    background-color: #ffffff;
+  }
+
+  /* Wrapper to hold image and overlay in sync */
+  .map-wrapper {
+    position: relative;
+    min-width: 4600px; /* Must match image width roughly */
+    width: max-content;
+  }
+
+  /* The main diagram image */
+  .map-image {
+    display: block;
+    width: auto;
+    max-width: none;
+    /* Prevents browser from shrinking the image, keeping coordinates correct */
+  }
+
+  /* SVG Overlay for the highlight colors */
+  .highlight-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Styling for the gray transparent areas */
+  .highlight-shape {
+    fill: #D3D3D3;
+    fill-opacity: 0.15;
+    stroke: #999;
+    stroke-width: 1px;
+    stroke-opacity: 0.3;
+  }
+</style>
+</head>
+<body>
+
+<div class="map-scroll-container">
+  <div class="map-wrapper">
+    <svg class="highlight-overlay" viewBox="0 0 4600 1200" preserveAspectRatio="none">
+      <polygon class="highlight-shape" points="205,243 1198,750 1648,85 2033,754 1603,1111 1267,199"></polygon>
+      <rect class="highlight-shape" x="1226" y="243" width="774" height="511"></rect>
+      <polygon class="highlight-shape" points="2024,243 2636,746 3723,1007 3723,1003"></polygon>
+      <rect class="highlight-shape" x="2661" y="249" width="1086" height="495"></rect>
+      <rect class="highlight-shape" x="3775" y="253" width="783" height="495"></rect>
+    </svg>
+
+    <img class="map-image" src="https://i.ibb.co/Zp12YN1B/VSM-Buyer-Process.png" usemap="#vsmbuyer" alt="VSM Buyer Process">
+    
+    <map name="vsmbuyer">
+      <area target="_blank" alt="1.1" title="1.1" href="https://docs.google.com/document/d/1zpOy1c8X5D3mZpPKVtPiZ1BWxkYS0GvL/preview" coords="205,243,1198,750,1648,85,2033,754,1603,1111,1267,199" shape="poly">
+      <area target="_blank" alt="1.2" title="1.2" href="https://docs.google.com/document/d/1L5ujM0Jx_aVjpSzbEXDDuRnn9qCg6cI_/preview" coords="1226,243,2000,754" shape="rect">
+      <area target="_blank" alt="1.3" title="1.3" href="https://docs.google.com/document/d/1b6clBE0y6LMQoJcApy7Lt95XJ9p2-Gf-/preview" coords="2024,243,2636,746,3723,1007,3723,1003" shape="poly">
+      <area target="_blank" alt="1.4" title="1.4" href="https://docs.google.com/document/d/1edoi13_Xj90Vrz4jjit1CIJGZj-y3N_u/preview" coords="2661,249,3747,744" shape="rect">
+      <area target="_blank" alt="1.5" title="1.5" href="https://docs.google.com/document/d/13D448El6sWpvlD6c4wPmobtQxRojXWPs/preview" coords="3775,253,4558,748" shape="rect">
+    </map>
+  </div>
+</div>
+
+</body>
 </html>
